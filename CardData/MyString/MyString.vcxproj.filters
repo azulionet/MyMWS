@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Parser">
+      <UniqueIdentifier>{87c3ef45-a3ea-4b5c-b356-ab42d2807e9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Reader">
+      <UniqueIdentifier>{a72e41f7-7378-4639-9ed5-14db512860f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Reader\MTG">
+      <UniqueIdentifier>{363c4e26-6002-4265-b812-d7842dc4bd86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CardData">
+      <UniqueIdentifier>{02dfd274-fd3c-4c1c-b1fb-a548d30b3df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Define">
+      <UniqueIdentifier>{ad7a48b1-5f49-4a3e-bdb8-df9e39200b0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Reader\VGD">
+      <UniqueIdentifier>{df48bfe6-670a-441c-8806-163be7378b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parser\Reader\WOW">
+      <UniqueIdentifier>{53c228fe-4d40-4ae6-acbd-b706360c31ca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Information.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ACCardDataManager.h">
+      <Filter>CardData</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine_MTG.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine_VGD.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="ACRowCardDataReader.h">
+      <Filter>Parser\Reader</Filter>
+    </ClInclude>
+    <ClInclude Include="ACRowCardDataReader_MTG.h">
+      <Filter>Parser\Reader\MTG</Filter>
+    </ClInclude>
+    <ClInclude Include="ACRowCardDataReader_VGD.h">
+      <Filter>Parser\Reader\VGD</Filter>
+    </ClInclude>
+    <ClInclude Include="ACRowCardDataParser.h">
+      <Filter>Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine_WOW.h">
+      <Filter>Define</Filter>
+    </ClInclude>
+    <ClInclude Include="ACRowCardDataReader_WOW.h">
+      <Filter>Parser\Reader\WOW</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ACCardDataManager.cpp">
+      <Filter>CardData</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ACRowCardDataReader.cpp">
+      <Filter>Parser\Reader</Filter>
+    </ClCompile>
+    <ClCompile Include="ACRowCardDataReader_MTG.cpp">
+      <Filter>Parser\Reader\MTG</Filter>
+    </ClCompile>
+    <ClCompile Include="ACRowCardDataReader_VGD.cpp">
+      <Filter>Parser\Reader\VGD</Filter>
+    </ClCompile>
+    <ClCompile Include="ACRowCardDataParser.cpp">
+      <Filter>Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="ACRowCardDataReader_WOW.cpp">
+      <Filter>Parser\Reader\WOW</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyString.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
