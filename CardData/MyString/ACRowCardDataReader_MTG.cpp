@@ -20,10 +20,31 @@ ACRowCardDataReader_MTG::~ACRowCardDataReader_MTG(void)
 
 GE_ERROR ACRowCardDataReader_MTG::Parsing(const std::string & strFileName)
 {
-	if( strFileName == std::string("") ) // 기본 데이터를 읽을 경우(바이너리 데이터)
-	{
-		return GE_ERROR_NONE_BASIC_DATA;
-	}
+// 	if( strFileName == std::string("") ) // 기본 데이터를 읽을 경우(바이너리 데이터)
+// 	{
+// 		return GE_ERROR_NONE_BASIC_DATA;
+// 	}
+
+	// 뭐가 파싱이던 뭐고 나발이던 간에 일단.
+
+	// 리더의 역할자체가 사실 데이터를 싸그리 긁어다가
+
+	// 카드 데이터 메인에 있는거에다 싸그리 옮기는 거라서 일단.
+
+	// 지금 리더가 데이터를 읽은 다음에 메인 디피파일을 어떻게 할까 안정해서
+
+	// 일단은 다 들고있게 작성할 예정
+
+	// 그래서, 그냥 일단 간단하게 체크 해보고 해당 변수가 off면 파일 찾아다 읽는걸루
+
+
+
+	// if( g_MainData->m_bIsSetted == TRUE )
+	// {
+	//		// 이미 파일을 읽은 상태! 그냥 리턴한다.
+	//		return GE_ERROR_NONE
+	// }
+
 
 
 	// mws혹은 mtgsalvation 등지에서 사용하는 몇몇 카드 데이터를 읽기위한 루틴
@@ -37,24 +58,24 @@ GE_ERROR ACRowCardDataReader_MTG::Parsing(const std::string & strFileName)
 
 /************************************************************************/
 
-static void WriteLine(TCHAR* a_szLog)
-{
-#ifdef SPT_WRITE_LOG
-
-	if(!a_szLog || _tcsclen(a_szLog) == 0)
-		return;
-
-	LPSTR	szAscii = NULL;
-	int		nAsciiSize = 0;
-
-	nAsciiSize = WideCharToMultiByte(CP_ACP, 0, a_szLog, -1, NULL, 0, NULL, NULL);
-	szAscii = (LPSTR)malloc(nAsciiSize+1);
-	ZeroMemory(szAscii, nAsciiSize+1);
-	WideCharToMultiByte(CP_ACP, 0, a_szLog, -1, szAscii, nAsciiSize+1, NULL, NULL);
-	WriteLine(szAscii);
-	free(szAscii);
-#endif // #ifdef SPT_WRITE_LOG
-}
+// static void WriteLine(TCHAR* a_szLog)
+// {
+// #ifdef SPT_WRITE_LOG
+// 
+// 	if(!a_szLog || _tcsclen(a_szLog) == 0)
+// 		return;
+// 
+// 	LPSTR	szAscii = NULL;
+// 	int		nAsciiSize = 0;
+// 
+// 	nAsciiSize = WideCharToMultiByte(CP_ACP, 0, a_szLog, -1, NULL, 0, NULL, NULL);
+// 	szAscii = (LPSTR)malloc(nAsciiSize+1);
+// 	ZeroMemory(szAscii, nAsciiSize+1);
+// 	WideCharToMultiByte(CP_ACP, 0, a_szLog, -1, szAscii, nAsciiSize+1, NULL, NULL);
+// 	WriteLine(szAscii);
+// 	free(szAscii);
+// #endif // #ifdef SPT_WRITE_LOG
+// }
 
 // static void WriteLine(char* a_szLog)
 // {
