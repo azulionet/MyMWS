@@ -14,6 +14,8 @@
 #include <string>
 #include <map>
 
+#include <atltime.h>
+
 
 // 
 #include "CommonDefine.h"
