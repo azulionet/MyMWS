@@ -4,32 +4,25 @@
 #include <windows.h>
 
 // enum
-enum E_WOW_RARELITY
+enum GE_WOW_RARELITY
 {
-	E_WOW_RARELITY_COMMON,
-	E_WOW_RARELITY_UNCOMMON,
-	E_WOW_RARELITY_RARE,
-	E_WOW_RARELITY_MITHIC_RARE,
+	WOW_RARELITY_COMMON,
+	WOW_RARELITY_UNCOMMON,
+	WOW_RARELITY_RARE,
+	WOW_RARELITY_MITHIC_RARE,
+};
+
+enum GE_VGD_BLOCK_DATA
+{
+	VGD_BLOCK_DATA_DEFAULT = -1,
+
+	VGD_BLOCK_BLOCK_NAME,
+	VGD_BLOCK_TOTAL_COUNT,
+
+	VGD_BLOCK_DATA_MAX_COUNT
 };
 
 // define
 
 // struct
 
-struct ST_WOW_DATA
-{
-	ST_WOW_DATA() : nCost(0), nRarelity(E_WOW_RARELITY_COMMON)
-	{
-
-	}
-
-	std::string		strCardName;
-	std::string		strCardType;
-	std::string		strText;
-	std::string		strFlavorText;
-	std::string		strPT;
-	std::string		strEdition;
-
-	INT				nCost;
-	INT				nRarelity;
-};

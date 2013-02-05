@@ -4,32 +4,31 @@
 #include <windows.h>
 
 // enum
-enum E_MTG_RARELITY
+enum GE_MTG_RARELITY
 {
-	E_MTG_RARELITY_COMMON,
-	E_MTG_RARELITY_UNCOMMON,
-	E_MTG_RARELITY_RARE,
-	E_MTG_RARELITY_MITHIC_RARE,
+	MTG_RARELITY_COMMON,
+	MTG_RARELITY_UNCOMMON,
+	MTG_RARELITY_RARE,
+	MTG_RARELITY_MITHIC_RARE,
+};
+
+enum GE_MTG_BLOCK_DATA
+{
+	MTG_BLOCK_DATA_DEFAULT = -1,
+
+	MTG_BLOCK_SET_NAME,
+	MTG_BLOCK_BLOCK_NAME,
+	MTG_BLOCK_BLOCK_CODE,
+	MTG_BLOCK_RELEASE_DATE,
+
+	MTG_BLOCK_TOTAL_COUNT,
+	MTG_BLOCK_BASIC_LAND_COUNT,
+	MTG_BLOCK_COMMON_COUNT,
+	MTG_BLOCK_UNCOMMON_COUNT,
+	MTG_BLOCK_RARE_COUNT,
+	MTG_BLOCK_MYTHIC_RARE_COUNT,
+
+	MTG_BLOCK_DATA_MAX_COUNT
 };
 
 // define
-
-// struct
-
-struct ST_MTG_DATA
-{ 
-	ST_MTG_DATA() : nCost(0), nRarelity(E_MTG_RARELITY_COMMON)
-	{
-
-	}
-
-	std::string		strCardName;
-	std::string		strCardType;
-	std::string		strText;
-	std::string		strFlavorText;
-	std::string		strPT;
-	std::string		strEdition;
-
-	INT				nCost;
-	INT				nRarelity;
-};

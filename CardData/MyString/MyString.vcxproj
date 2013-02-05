@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ACCardDataManager.h" />
+    <ClInclude Include="ACGameDataManager.h" />
     <ClInclude Include="ACRowCardDataParser.h" />
     <ClInclude Include="ACRowCardDataReader.h" />
     <ClInclude Include="ACRowCardDataReader_MTG.h" />
@@ -87,23 +88,42 @@
     <ClInclude Include="CommonDefine_MTG.h" />
     <ClInclude Include="CommonDefine_VGD.h" />
     <ClInclude Include="CommonDefine_WOW.h" />
+    <ClInclude Include="DataFileter_MTG.h" />
+    <ClInclude Include="DataFilter.h" />
+    <ClInclude Include="DataFilterManager.h" />
+    <ClInclude Include="DataFilter_VGD.h" />
+    <ClInclude Include="DataFilter_WOW.h" />
     <ClInclude Include="Information.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Util.h" />
+    <ClInclude Include="Util_MTG.h" />
+    <ClInclude Include="Util_VGD.h" />
+    <ClInclude Include="Util_WOW.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ACCardDataManager.cpp" />
+    <ClCompile Include="ACGameDataManager.cpp" />
     <ClCompile Include="ACRowCardDataParser.cpp" />
     <ClCompile Include="ACRowCardDataReader.cpp" />
     <ClCompile Include="ACRowCardDataReader_MTG.cpp" />
     <ClCompile Include="ACRowCardDataReader_VGD.cpp" />
     <ClCompile Include="ACRowCardDataReader_WOW.cpp" />
+    <ClCompile Include="DataFileter_MTG.cpp" />
+    <ClCompile Include="DataFilter.cpp" />
+    <ClCompile Include="DataFilterManager.cpp" />
+    <ClCompile Include="DataFilter_VGD.cpp" />
+    <ClCompile Include="DataFilter_WOW.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Util.cpp" />
+    <ClCompile Include="Util_MTG.cpp" />
+    <ClCompile Include="Util_VGD.cpp" />
+    <ClCompile Include="Util_WOW.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyString.rc" />

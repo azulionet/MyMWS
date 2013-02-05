@@ -3,10 +3,10 @@
 
 ACCardDataManager * ACCardDataManager::m_pInstance = NULL;
 
-ACCardDataManager::ACCardDataManager(void) : m_eType(GE_TCG_DEFAULT)
+ACCardDataManager::ACCardDataManager()
 {
 }
 
-ACCardDataManager::~ACCardDataManager(void)
+ACCardDataManager::~ACCardDataManager()
 {
 }

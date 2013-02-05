@@ -22,17 +22,44 @@
     <Filter Include="Parser\Reader\MTG">
       <UniqueIdentifier>{363c4e26-6002-4265-b812-d7842dc4bd86}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CardData">
-      <UniqueIdentifier>{02dfd274-fd3c-4c1c-b1fb-a548d30b3df1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Define">
-      <UniqueIdentifier>{ad7a48b1-5f49-4a3e-bdb8-df9e39200b0d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Parser\Reader\VGD">
       <UniqueIdentifier>{df48bfe6-670a-441c-8806-163be7378b5d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Parser\Reader\WOW">
       <UniqueIdentifier>{53c228fe-4d40-4ae6-acbd-b706360c31ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataFilter">
+      <UniqueIdentifier>{0372ed9a-b31f-4d5c-baaf-d2669880dc2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataFilter\DataFilterList">
+      <UniqueIdentifier>{2c81fc33-c438-43f4-a2a9-b23775340a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataFilter\DataFilterList\WOW">
+      <UniqueIdentifier>{b0fbe4eb-afa8-461d-b7ad-a81af73c7da9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataFilter\DataFilterList\MTG">
+      <UniqueIdentifier>{0ef20f1f-236c-4f9a-80db-1da34bda71fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataFilter\DataFilterList\VGD">
+      <UniqueIdentifier>{40027821-3372-4e38-a6cc-04a4b12b81d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TCG_Data">
+      <UniqueIdentifier>{2c5b68c4-350c-428f-948a-96819695c8d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TCG_CardData">
+      <UniqueIdentifier>{aeb87b51-d0a2-4baf-9a7b-0d6f7ff4e0d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{ad7a48b1-5f49-4a3e-bdb8-df9e39200b0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\MTG">
+      <UniqueIdentifier>{b7e24095-8cbd-4e96-90cf-456f9fcd67ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\VGD">
+      <UniqueIdentifier>{faefd595-bed1-4c15-a2b8-73d43c9826dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\WOW">
+      <UniqueIdentifier>{2e5a6ab3-e8c1-4ca7-9e44-5382c822799d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,17 +78,8 @@
     <ClInclude Include="Information.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ACCardDataManager.h">
-      <Filter>CardData</Filter>
-    </ClInclude>
     <ClInclude Include="CommonDefine.h">
-      <Filter>Define</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonDefine_MTG.h">
-      <Filter>Define</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonDefine_VGD.h">
-      <Filter>Define</Filter>
+      <Filter>Util</Filter>
     </ClInclude>
     <ClInclude Include="ACRowCardDataReader.h">
       <Filter>Parser\Reader</Filter>
@@ -75,19 +93,55 @@
     <ClInclude Include="ACRowCardDataParser.h">
       <Filter>Parser</Filter>
     </ClInclude>
-    <ClInclude Include="CommonDefine_WOW.h">
-      <Filter>Define</Filter>
-    </ClInclude>
     <ClInclude Include="ACRowCardDataReader_WOW.h">
       <Filter>Parser\Reader\WOW</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFilter.h">
+      <Filter>DataFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFilterManager.h">
+      <Filter>DataFilter</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFileter_MTG.h">
+      <Filter>DataFilter\DataFilterList\MTG</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFilter_WOW.h">
+      <Filter>DataFilter\DataFilterList\WOW</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFilter_VGD.h">
+      <Filter>DataFilter\DataFilterList\VGD</Filter>
+    </ClInclude>
+    <ClInclude Include="ACCardDataManager.h">
+      <Filter>TCG_CardData</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine_MTG.h">
+      <Filter>Util\MTG</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine_VGD.h">
+      <Filter>Util\VGD</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonDefine_WOW.h">
+      <Filter>Util\WOW</Filter>
+    </ClInclude>
+    <ClInclude Include="Util_MTG.h">
+      <Filter>Util\MTG</Filter>
+    </ClInclude>
+    <ClInclude Include="Util_VGD.h">
+      <Filter>Util\VGD</Filter>
+    </ClInclude>
+    <ClInclude Include="Util_WOW.h">
+      <Filter>Util\WOW</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ACGameDataManager.h">
+      <Filter>TCG_Data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ACCardDataManager.cpp">
-      <Filter>CardData</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
@@ -106,6 +160,39 @@
     </ClCompile>
     <ClCompile Include="ACRowCardDataReader_WOW.cpp">
       <Filter>Parser\Reader\WOW</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFilter.cpp">
+      <Filter>DataFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFilterManager.cpp">
+      <Filter>DataFilter</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFileter_MTG.cpp">
+      <Filter>DataFilter\DataFilterList\MTG</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFilter_WOW.cpp">
+      <Filter>DataFilter\DataFilterList\WOW</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFilter_VGD.cpp">
+      <Filter>DataFilter\DataFilterList\VGD</Filter>
+    </ClCompile>
+    <ClCompile Include="ACCardDataManager.cpp">
+      <Filter>TCG_CardData</Filter>
+    </ClCompile>
+    <ClCompile Include="Util_MTG.cpp">
+      <Filter>Util\MTG</Filter>
+    </ClCompile>
+    <ClCompile Include="Util_VGD.cpp">
+      <Filter>Util\VGD</Filter>
+    </ClCompile>
+    <ClCompile Include="Util_WOW.cpp">
+      <Filter>Util\WOW</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ACGameDataManager.cpp">
+      <Filter>TCG_Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

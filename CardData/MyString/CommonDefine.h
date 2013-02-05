@@ -9,6 +9,8 @@ enum AGE_TCG_DEFINE
 	GE_TCG_MAGIC_THE_GATHERING,
 	GE_TCG_VANGUARD,
 	GE_TCG_WORLD_OF_WARCRAFT,
+
+	GE_TCG_TYPE_MAX_COUNT
 };
 
 // 추가 : enum to string비슷하게 일단 에러나면 문구 출력할 수 있는 시스템(로그)
@@ -22,6 +24,16 @@ enum GE_ERROR
 	// 데이터 파싱 관련 에러
 	GE_ERROR_PARSING,
 	GE_ERROR_NONE_BASIC_DATA, // 파서에 기본 데이터로 불렀는데 해당 파일 데이터가 없을 때
+};
+
+// 리팩토링 : 이게 필요할지 안할지 모르겠소 -_-;;
+enum GE_KEY_TYPE
+{
+	GE_KEY_TYPE_DEFAULT = -1,
+
+	GE_KEY_TYPE_BLOCK_NAME,
+
+	GE_KEY_TYPE_MAX_COUNT
 };
 
 // define

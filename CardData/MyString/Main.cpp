@@ -6,79 +6,84 @@
 #include "ACCardDataManager.h"
 #include "ACRowCardDataParser.h"
 
-
-
-
-class ACSendSalvationGetProtocol
+INT ReadAllBlockData()
 {
-public :
-	ACSendSalvationGetProtocol() : m_hClient(INVALID_SOCKET), m_nAddrSize(0)
+	const std::wifstream wStream(L"MtgBlockData.xml");
+	std::wstring strReadedString;
+
+	std::wstring	strToken;
+
+	static int n = 0;
+
+	const std::wstring strPushStr = L" </set>";
+
+	const std::wstring strSetNameToken		= L"  <name>"; // 8
+	const std::wstring strBlockNameToken	= L"  <block>"; // 9
+	const std::wstring strCodeToken			= L"  <code>"; // 8
+	const std::wstring strReleaseDateToken	= L"  <release-date>"; // 16
+
+	const std::wstring strTotalToken		= L"   <total>"; // 10	
+	const std::wstring strCommonToken		= L"   <common>"; // 11 
+	const std::wstring strUncommonToken		= L"   <uncommon>"; // 13
+	const std::wstring strRareToken			= L"   <rare>"; // 9
+	const std::wstring strMythicRare		= L"   <mythic-rare>"; // 16
+	const std::wstring strBasicLandToken	= L"   <basic-land>"; // 15
+
+	std::wstring::iterator strItorStart;
+	std::wstring::iterator strItorEnd;
+
+
+	while ( std::getline(wStream, strReadedString) )
 	{
-		WSADATA wsaData;
-	
-		WSAStartup(MAKEWORD(2,2), &wsaData);
+		// 파일을 처음부터 끝까지 한줄씩 (마지막 \n 은 자동으로 제거됨) 읽음. 
 
-		struct in_addr	stAddr;
-
-		hostent * host = gethostbyname("www.mtgsalvation.com");
-
-		// hostent * host = gethostbyname("www.mtgsalvation.com/printable-gatecrash-spoiler.html");
-		// hostent * host = gethostbyname("www.naver.com");
-
-		INT * pN = (INT*)host->h_addr_list;
-		stAddr.s_addr = *pN;
-		// std::string str = inet_ntoa(stAddr);
+		// wcsncmp()
 
 
-		m_hClient = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-
-		m_Addr_Client.sin_family = PF_INET;
-		m_Addr_Client.sin_port = htons(80);
-		// m_Addr_Client.sin_addr = htonl( inet_addr(inet_ntoa(stAddr)) );
-		m_Addr_Client.sin_addr.s_addr = inet_addr(inet_ntoa(stAddr));
-
-		m_nAddrSize = sizeof(m_Addr_Client);
-
-
-		std::wstring strGet(L"GET http://www.mtgsalvation.com/printable-gatecrash-spoiler.html HTTP/1.1");
-
-		wchar_t strBuf[MAX_PATH] = {0,};
-
-		wcscpy(strBuf, strGet.c_str());
-
-
-		CHAR strBBuf[MAX_PATH] = {0,};
-
-		WideCharToMultiByte(CP_ACP,0,strBuf,-1,strBBuf,(strGet.length()*2),NULL,NULL);
+		// 		E eType = GetKeyType(strReaderString);
+		// 
+		// 		std::wstring strGetBody = GetBodyText(strReaderString);
+		// 
+		// 		Block.SetString(eType, strGetBody);
 
 
 
-		sendto(m_hClient, strBBuf, (strGet.length()*2), 0, (sockaddr*)&m_Addr_Client, m_nAddrSize);
 
-		sockaddr_in addrRecv;
-		INT			addrRecvSize = sizeof(addrRecv);
 
-		while( recvfrom(m_hClient, strBBuf, MAX_PATH, 0, (sockaddr*)&addrRecv, &addrRecvSize) != 0 )
+
+		std::wcout << strReadedString << std::endl;
+
+		if( strPushStr == strReadedString ) // 만약 해당 문자열이 </set> 이라면
 		{
-			std::cout << strBuf << std::endl;
+			m_BlockDataList.push_back(Block);
+			Block.Clear();
 		}
+
+		// 
+
+
+
+
+
+
+		++n;
+
+		if( n >= 20 )
+			break;
 	}
 
-	~ACSendSalvationGetProtocol()
-	{
-		WSACleanup();
-	}
 
-	SOCKET m_hClient;
-	SOCKADDR_IN m_Addr_Client;
-	INT m_nAddrSize;
 
-};
+	// std::wstring	strUni = CA2W("멀티바이트를 유니코드로 변환");
+	// std::string		strMulti = CW2A(L"유니코드를 멀티바이트로 변환");
+	// std::string		strUTF8	= CW2A(L"유니코드를 UTF8로 변환", CP_UTF8);
+
+	return GE_ERROR_NONE;
+}
+
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	GetCardDataManager()->m_eType = GE_TCG_MAGIC_THE_GATHERING;
-
 	ACRowCardDataParser Parser;
 	
 	Parser.SetParserType(GE_TCG_MAGIC_THE_GATHERING);
